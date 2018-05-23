@@ -13,7 +13,7 @@ def attack():
     global monsterhealth
     damage = playerweapon.damage
     if monsterhealth > 0:
-        monsterhealth -= damage
+        monsterhealth -= random.randint(*damage)
     else:
         print('Congratulations! You have won!')
 
