@@ -19,13 +19,11 @@ def monsterattack():
     global playerhealth
     monsterdamage = monster.damagerange
     playerhealth -= random.randint(*monsterdamage)
-    if playerhealth <= 0:
-        print('You have died.')
 
 
 print('Uh oh, a ' + monster.name + ' has attacked you! Fortunately, you have a ' + playerweapon.name + ' to defend'
       ' yourself!')
-time.sleep(2)
+time.sleep(1)
 while True:
     choice = input('Will you attack?')
     if choice in ('y', 'Y', 'ye', 'yes', 'Yes', 'attack', 'Attack'):
@@ -37,6 +35,7 @@ while True:
             print('\nThe ' + str(monster.name) + ' has ' + str(monsterhealth) + ' health left!')
             monsterattack()
             if playerhealth <= 0:
+                print('You have died.')
                 break
             else:
                 print('You only have ' + str(playerhealth) + ' health left!')
